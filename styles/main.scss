@@ -1,0 +1,26 @@
+@use './theme/dark';
+@use './theme/light';
+@use './calculator/panel';
+@use './calculator/input';
+
+$txt-color: #fff;
+$operation-color: #7D26F4;
+$operation-button: #996EF4;
+$equals-btn: #7E30ED;
+$history-txt: #7D7D7D;
+$button-color: #252525;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  color: $txt-color;
+  font-family: Inter, sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+
