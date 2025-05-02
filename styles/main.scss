@@ -1,14 +1,36 @@
+//base styles
 @use './theme/dark';
 @use './theme/light';
+@use './calculator/nav';
 @use './calculator/panel';
 @use './calculator/input';
 
-$txt-color: #fff;
-$operation-color: #7D26F4;
-$operation-button: #996EF4;
-$equals-btn: #7E30ED;
+$text-color: #fff;
+
 $history-txt: #7D7D7D;
 $button-color: #252525;
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+}
+
+@mixin flex-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin grid {
+  display: grid;
+  justify-items: center;
+  grid-template-columns: repeat(4, minmax(100px, 1fr));
+  gap: 1rem;
+
+}
 
 * {
   margin: 0;
@@ -17,10 +39,54 @@ $button-color: #252525;
 }
 
 body {
-  color: $txt-color;
+  color: $text-color;
   font-family: Inter, sans-serif;
   font-size: 1rem;
+  font-weight: 550;
   line-height: 1.5;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
 
+ul {
+  @include flex-row;
+  list-style: none;
+}
+
+button {
+  border: none;
+  font-family: inherit;
+  font-weight: inherit;
+  font-size: 3.5rem;
+
+
+
+  &:hover {
+    opacity: 0.8;
+    cursor: pointer;
+  }
+}
+
+//Container
+.container {
+  .calculator {
+    @include flex-column;
+    margin: 1rem 0;
+    gap: 2rem;
+  }
+}
+
+.navbar {
+  @include flex-row;
+}
+
+.input-container {
+  @include flex-column
+}
+
+.panel {
+  @include grid;
+}

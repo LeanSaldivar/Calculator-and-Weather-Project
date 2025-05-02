@@ -1,0 +1,38 @@
+$number-bg: #252525;
+$number-color: #7D26F4;
+
+$txt-color: #fff;
+$operation-bg: #996EF4;
+
+$equals-btn: #7E30ED;
+
+
+
+.operation-button {
+  background: $operation-bg;
+  color: $txt-color;
+
+  width: 100px;
+  height: 100px;
+
+  vertical-align: middle;
+
+  box-shadow: inset 6px 6px 10px 0 rgba(0, 0, 0, 0.2),
+  inset -6px -6px 10px 0 rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+}
+
+.number-button {
+  background: $number-bg;
+  color: $number-color;
+
+  width: 100px;
+  height: 100px;
+
+  font-size: 2rem;
+}
+
+.equals-button {
+  background: $equals-btn;
+  color: $txt-color;
+}

@@ -1,0 +1,49 @@
+$input-color: #fff;
+$history-txt: #7D7D7D;
+$input-bg: #252525;
+
+@mixin font{
+  background: $input-bg;
+
+  color: $input-color;
+  font-family: inherit;
+  font-weight: inherit;
+  font-size: 2rem;
+}
+
+@mixin history-txt {
+  @include font;
+  font-size: 1rem;
+  color: $history-txt;
+}
+
+input {
+  padding: 0 1rem;
+  width: 100%;
+  border: none;
+  text-align: end;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.input-container {
+  background: $input-bg;
+  justify-content: space-evenly;
+
+  text-align: end;
+
+  height: 100px;
+
+  box-shadow: 0px 10px 25px 5px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+}
+
+.input-text {
+  @include font;
+}
+
+.history-text {
+  @include history-txt;
+}
