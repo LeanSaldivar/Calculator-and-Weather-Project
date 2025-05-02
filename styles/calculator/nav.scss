@@ -1,0 +1,82 @@
+$nav-bg: #252525;
+$moon-hover: #C3C3C3;
+$light-hover: #F6F638;
+$history-hover: #996EF4;
+
+@mixin base {
+  transition: all 0.3s ease-in-out;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: transparent;
+}
+
+@mixin moon-hover {
+  background: $moon-hover;
+  border-radius: 10px;
+  width: 3rem;
+  transition: all 0.3s ease-in-out;
+}
+
+@mixin light-hover {
+  background: $light-hover;
+  border-radius: 10px;
+  width: 3rem;
+  transition: all 0.3s ease-in-out;
+}
+
+@mixin history-hover {
+  background: $history-hover;
+  border-radius: 10px;
+  width: 3rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.navbar {
+  background: $nav-bg;
+
+  box-shadow: 0 10px 23px -1px rgba(0, 0, 0, 0.3);
+  border-radius: 20px;
+}
+
+.navbar-list {
+  gap: 3rem;
+}
+
+.icon {
+  margin: 0.5rem 0.8rem;
+}
+
+.moon, .sun, .history {
+  @include base;
+}
+
+
+.moon {
+  &:hover {
+    @include moon-hover;
+  }
+
+  &:active {
+    @include moon-hover;
+  }
+}
+
+.sun {
+  &:hover {
+    @include light-hover;
+  }
+  &:active {
+    @include light-hover;
+  }
+}
+
+.history {
+  &:hover {
+    @include history-hover;
+  }
+  &:active {
+    @include history-hover;
+  }
+}
+
