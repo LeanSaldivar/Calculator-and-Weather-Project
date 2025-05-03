@@ -1,4 +1,4 @@
-//base styles
+//base stylesheets
 @use './theme/dark';
 @use './theme/light';
 @use './calculator/nav';
@@ -24,12 +24,16 @@ $button-color: #252525;
   justify-content: center;
 }
 
-@mixin grid {
+@mixin grid-row {
   display: grid;
   justify-items: center;
-  grid-template-columns: repeat(4, minmax(100px, 1fr));
+  grid-template-rows: repeat(4, minmax(100px, 1fr));
   gap: 1rem;
+}
 
+@mixin grid-column {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(100px, 1fr));
 }
 
 * {
@@ -88,5 +92,11 @@ button {
 }
 
 .panel {
-  @include grid;
+  @include grid-row;
 }
+
+.row {
+  @include grid-column;
+  gap: 1rem;
+}
+

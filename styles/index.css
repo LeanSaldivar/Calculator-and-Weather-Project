@@ -17,7 +17,7 @@ input:focus {
   justify-content: space-evenly;
   text-align: end;
   height: 100px;
-  box-shadow: 0px 10px 25px 5px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 10px 25px 5px rgba(0, 0, 0, 0.3);
   border-radius: 5px;
 }
 
@@ -39,13 +39,29 @@ input:focus {
   color: #7D7D7D;
 }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 .operation-button {
   background: #996EF4;
   color: #fff;
   width: 100px;
   height: 100px;
   vertical-align: middle;
-  box-shadow: inset 6px 6px 10px 0 rgba(0, 0, 0, 0.2), inset -6px -6px 10px 0 rgba(255, 255, 255, 0.5);
+  box-shadow: inset 6px 6px 10px 0 rgba(0, 0, 0, 0.2), inset -6px -6px 10px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+
+.util-button {
+  background: #996EF4;
+  color: #fff;
+  width: 100px;
+  height: 100px;
+  vertical-align: middle;
+  box-shadow: inset 6px 6px 10px 0 rgba(0, 0, 0, 0.2), inset -6px -6px 10px 0 rgba(0, 0, 0, 0.2);
   border-radius: 10px;
 }
 
@@ -55,11 +71,28 @@ input:focus {
   width: 100px;
   height: 100px;
   font-size: 2rem;
+  box-shadow: inset 6px 6px 10px 0 rgba(125, 38, 244, 0.2), inset -6px -6px 10px 0 rgba(125, 38, 244, 0.2);
+  border-radius: 10px;
+}
+
+.util-button2 {
+  background: #252525;
+  color: #7D26F4;
+  width: 100px;
+  height: 100px;
+  font-size: 2rem;
+  box-shadow: inset 6px 6px 10px 0 rgba(125, 38, 244, 0.2), inset -6px -6px 10px 0 rgba(125, 38, 244, 0.2);
+  border-radius: 10px;
 }
 
 .equals-button {
   background: #7E30ED;
   color: #fff;
+  width: 100px;
+  height: 200px;
+  grid-row-start: span 3;
+  border-radius: 10px;
+  box-shadow: inset 6px 6px 10px 0 rgba(0, 0, 0, 0.2), inset -6px -6px 10px 0 rgba(0, 0, 0, 0.5);
 }
 
 .navbar {

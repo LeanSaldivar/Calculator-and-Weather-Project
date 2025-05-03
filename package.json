@@ -13,5 +13,8 @@
   "description": "",
   "devDependencies": {
     "sass": "^1.87.0"
+  },
+  "dependencies": {
+    "mathjs": "^14.4.0"
   }
 }
