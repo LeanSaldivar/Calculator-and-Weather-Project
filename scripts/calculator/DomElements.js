@@ -8,7 +8,11 @@ let deleteButton = document.querySelector('#delete-button');
 let equalsButton = document.querySelector('#equals-button');
 let button = document.querySelectorAll('button');
 let historyInput = document.querySelector('#history-text');
+let openModal = document.querySelector('#history');
+let closeModal = document.querySelector('#close-modal');
+let dialog = document.querySelector('#history-dialog');
 
 export {numButton, operatorButton, inputText,
     divideButton, clearButton, percentButton,
-    deleteButton, equalsButton, button, historyInput};
+    deleteButton, equalsButton, button,
+    historyInput, openModal, closeModal, dialog};

@@ -15,5 +15,4 @@ const calculateResult = (inputText) => {
 };
 
 
-
-export { getInput, clear, del, calculateResult };
+export { getInput, clear, del, calculateResult};

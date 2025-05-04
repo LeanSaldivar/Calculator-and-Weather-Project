@@ -1,0 +1,41 @@
+$backdrop: rgba(0,0,0,0.8);
+$modal-bg: #252525;
+$modal-color: #fff;
+
+dialog {
+  margin: 1rem auto;
+  padding: 1rem 2rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  opacity: 0;
+  transition: all 0.3s allow-discrete;
+  width: 200px;
+}
+
+dialog[open] {
+  opacity: 1;
+}
+
+@starting-style {
+  dialog[open] {
+    opacity: 0;
+  }
+}
+
+dialog::backdrop {
+  opacity: 0;
+  transition: all 0.3s allow-discrete;
+  background: rgba(0,0,0,0);
+}
+
+dialog[open]::backdrop {
+  background-color: $backdrop;
+  opacity: 1;
+}
+
+@starting-style {
+  dialog[open]::backdrop {
+    opacity: 0;
+    background: rgba(0,0,0,0);
+  }
+}

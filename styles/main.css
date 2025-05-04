@@ -12,6 +12,28 @@ body {
   gap: 3rem;
 }
 
+.nav-url {
+  background: transparent;
+}
+.nav-url:focus .moon {
+  background: #C3C3C3;
+  border-radius: 10px;
+  width: 3rem;
+  transition: all 0.3s ease-in-out;
+}
+.nav-url:focus .sun {
+  background: #F6F638;
+  border-radius: 10px;
+  width: 3rem;
+  transition: all 0.3s ease-in-out;
+}
+.nav-url:focus .history {
+  background: #996EF4;
+  border-radius: 10px;
+  width: 3rem;
+  transition: all 0.3s ease-in-out;
+}
+
 .icon {
   margin: 0.5rem 0.8rem;
 }
@@ -30,12 +52,6 @@ body {
   width: 3rem;
   transition: all 0.3s ease-in-out;
 }
-.moon:active {
-  background: #C3C3C3;
-  border-radius: 10px;
-  width: 3rem;
-  transition: all 0.3s ease-in-out;
-}
 
 .sun:hover {
   background: #F6F638;
@@ -43,20 +59,8 @@ body {
   width: 3rem;
   transition: all 0.3s ease-in-out;
 }
-.sun:active {
-  background: #F6F638;
-  border-radius: 10px;
-  width: 3rem;
-  transition: all 0.3s ease-in-out;
-}
 
 .history:hover {
-  background: #996EF4;
-  border-radius: 10px;
-  width: 3rem;
-  transition: all 0.3s ease-in-out;
-}
-.history:active {
   background: #996EF4;
   border-radius: 10px;
   width: 3rem;
@@ -113,6 +117,10 @@ body {
   box-shadow: inset 6px 6px 10px 0 rgba(0, 0, 0, 0.2), inset -6px -6px 10px 0 rgba(0, 0, 0, 0.5);
 }
 
+.btn:hover {
+  opacity: 0.8;
+}
+
 input {
   padding: 0 1rem;
   width: 100%;
@@ -156,9 +164,46 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 
+dialog {
+  margin: 1rem auto;
+  padding: 1rem 2rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  opacity: 0;
+  transition: all 0.3s allow-discrete;
+  width: 200px;
+}
+
+dialog[open] {
+  opacity: 1;
+}
+
+@starting-style {
+  dialog[open] {
+    opacity: 0;
+  }
+}
+dialog::backdrop {
+  opacity: 0;
+  transition: all 0.3s allow-discrete;
+  background: rgba(0, 0, 0, 0);
+}
+
+dialog[open]::backdrop {
+  background-color: rgba(0, 0, 0, 0.8);
+  opacity: 1;
+}
+
+@starting-style {
+  dialog[open]::backdrop {
+    opacity: 0;
+    background: rgba(0, 0, 0, 0);
+  }
+}
 * {
   margin: 0;
   padding: 0;
+  outline: 0;
   box-sizing: border-box;
 }
 
@@ -189,7 +234,6 @@ button {
   font-size: 3.5rem;
 }
 button:hover {
-  opacity: 0.8;
   cursor: pointer;
 }
 

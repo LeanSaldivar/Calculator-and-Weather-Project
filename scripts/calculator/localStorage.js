@@ -1,8 +1,9 @@
+import * as math from 'https://esm.sh/mathjs';
+
 let calculations = {
     input: '',
     output: ''
 }
-
 
 function saveInput(inputValue) {
     calculations.input = inputValue;
@@ -33,8 +34,31 @@ function persistCalculations() {
     }
 }
 
-function getHistoryInput(textInput, historyInput){
-    historyInput.value = textInput.value;
+function getHistoryInput(historyInput, inputText) {
+    const expression = inputText.value.trim();
+
+    if (!expression) return;
+
+    try {
+        const result = math.evaluate(expression);
+
+        if (
+            result === undefined ||
+            result === null ||
+            Number.isNaN(result) ||
+            result === Infinity ||
+            result === -Infinity
+        ) {
+            return;
+        }
+
+        saveOutput(result);
+        historyInput.value = calculations.output;
+
+    } catch (err) {
+        return;
+    }
 }
+
 
 export { saveInput, saveOutput, persistCalculations, getHistoryInput};
