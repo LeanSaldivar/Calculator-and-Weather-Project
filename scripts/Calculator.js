@@ -3,12 +3,15 @@ import {
     numButton, operatorButton, divideButton,
     clearButton, percentButton, deleteButton,
     equalsButton, inputText, button, historyInput,
-    openModal, closeModal, dialog,
+    openModal, dialog,
 } from './calculator/DomElements.js';
-import { saveInput, saveOutput, persistCalculations, getHistoryInput} from './calculator/localStorage.js';
+import { saveInput, saveOutput, persistCalculations, getHistoryInput, getLocalHistory} from './calculator/localStorage.js';
+
+
+getLocalHistory();
+
 
 openModal.addEventListener('click', () => dialog.showModal());
-closeModal.addEventListener('click', () => dialog.close());
 
 dialog.addEventListener('click', (event) => {
     const rect = dialog.getBoundingClientRect();
@@ -23,6 +26,7 @@ dialog.addEventListener('click', (event) => {
     }
 })
 
+
 percentButton.addEventListener('click', () => getInput('%', inputText));
 divideButton.addEventListener('click', () => getInput('/', inputText));
 clearButton.addEventListener('click', () => clear(inputText));
@@ -32,6 +36,8 @@ equalsButton.addEventListener('click', () => {
     calculateResult(inputText);
     saveOutput(inputText.value);
     persistCalculations();
+    getLocalHistory();
+
 });
 
 inputText.addEventListener('input', () => {
