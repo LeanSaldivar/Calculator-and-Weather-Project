@@ -68,3 +68,9 @@ $equals-btn: #7E30ED;
   box-shadow: inset 6px 6px 10px 0 rgba(0, 0, 0, 0.2),
   inset -6px -6px 10px 0  rgba(0, 0, 0, 0.5);
 }
+
+.btn {
+  &:hover {
+    opacity: 0.8;
+  }
+}

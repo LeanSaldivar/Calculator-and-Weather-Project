@@ -14,33 +14,43 @@
         <nav class="navbar">
             <ul class="navbar-list">
                 <li class="navbar-list-item">
-                    <a href="#" class="nav-url">
+                    <button  class="nav-url" id="sun" tabindex="0">
                         <svg class="icon sun" width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M15 22.5C19.1421 22.5 22.5 19.1421 22.5 15C22.5 10.8579 19.1421 7.5 15 7.5C10.8579 7.5 7.5 10.8579 7.5 15C7.5 19.1421 10.8579 22.5 15 22.5Z" stroke="white" stroke-width="2.25"/>
                             <path d="M15 2.5V3.75M15 26.25V27.5M27.5 15H26.25M3.75 15H2.5" stroke="white" stroke-width="2.25" stroke-linecap="round"/>
                             <path opacity="0.5" d="M23.8374 6.1625L23.3474 6.65375M6.65238 23.3475L6.16113 23.8387M23.8374 23.8375L23.3474 23.3462M6.65238 6.6525L6.16113 6.16125" stroke="white" stroke-width="2.25" stroke-linecap="round"/>
                         </svg>
-                    </a>
+                    </button>
                 </li>
 
                 <li>
-                    <a href="#" class="nav-url">
+                    <button  class="nav-url" id="moon" tabindex="0">
                         <svg class="icon moon" width="36" height="36" viewBox="0 0 36 36" fill="#FFF" xmlns="http://www.w3.org/2000/svg">
                             <path d="M33 18C33 26.2845 26.2845 33 18 33C9.7155 33 3 26.2845 3 18C3 9.7155 9.7155 3 18 3C26.2845 3 33 9.7155 33 18Z" stroke="#252525" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"/>
                             <path d="M18 33C22.971 33 27 26.2845 27 18C27 9.7155 22.971 3 18 3M16.5 10.5H16.5135M15 21.75C15 22.3467 14.7629 22.919 14.341 23.341C13.919 23.7629 13.3467 24 12.75 24C12.1533 24 11.581 23.7629 11.159 23.341C10.7371 22.919 10.5 22.3467 10.5 21.75C10.5 21.1533 10.7371 20.581 11.159 20.159C11.581 19.7371 12.1533 19.5 12.75 19.5C13.3467 19.5 13.919 19.7371 14.341 20.159C14.7629 20.581 15 21.1533 15 21.75Z" stroke="#252525" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
-                    </a>
+                    </button>
                 </li>
 
                 <li>
-                    <a href="#" class="nav-url">
-                        <svg class="icon history" width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <button  class="nav-url" id="history" tabindex="0">
+                        <svg class="icon history" width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" tabindex="3">
                             <path d="M19.5 4.5C15.9196 4.5 12.4858 5.92232 9.95406 8.45406C7.42232 10.9858 6 14.4196 6 18H1.5L7.335 23.835L7.44 24.045L13.5 18H9C9 12.195 13.695 7.5 19.5 7.5C25.305 7.5 30 12.195 30 18C30 23.805 25.305 28.5 19.5 28.5C16.605 28.5 13.98 27.315 12.09 25.41L9.96 27.54C11.2099 28.7973 12.6965 29.7946 14.3339 30.4742C15.9713 31.1539 17.7271 31.5025 19.5 31.5C23.0804 31.5 26.5142 30.0777 29.0459 27.5459C31.5777 25.0142 33 21.5804 33 18C33 14.4196 31.5777 10.9858 29.0459 8.45406C26.5142 5.92232 23.0804 4.5 19.5 4.5ZM18 12V19.5L24.375 23.28L25.53 21.36L20.25 18.225V12H18Z" fill="white"/>
                         </svg>
-                    </a>
+                    </button>
                 </li>
             </ul>
         </nav>
+
+
+        <dialog class="history-dialog" id="history-dialog">
+            <div class="dialog-container">
+                <div class="history-log">
+
+
+                </div>
+            </div>
+        </dialog>
 
         <div class="input-container">
             <input type="text"  class="history-text" id="history-text" readonly aria-readonly="true">
@@ -49,110 +59,110 @@
 
         <div class="panel">
             <div class="row">
-                <button class="util-button" id="clear-button">
+                <button class="btn util-button" id="clear-button">
                     C
                 </button>
 
-                <button class="util-button" id="percent-button">
+                <button class="btn util-button" id="percent-button">
                     <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M15.6249 22.9167C13.611 22.9167 11.8923 22.2049 10.4687 20.7813C9.04506 19.3576 8.33325 17.6389 8.33325 15.625C8.33325 13.6111 9.04506 11.8924 10.4687 10.4688C11.8923 9.04515 13.611 8.33334 15.6249 8.33334C17.6388 8.33334 19.3576 9.04515 20.7812 10.4688C22.2048 11.8924 22.9166 13.6111 22.9166 15.625C22.9166 17.6389 22.2048 19.3576 20.7812 20.7813C19.3576 22.2049 17.6388 22.9167 15.6249 22.9167ZM15.6249 18.75C16.493 18.75 17.2312 18.4465 17.8395 17.8396C18.4478 17.2326 18.7513 16.4945 18.7499 15.625C18.7485 14.7556 18.4451 14.0181 17.8395 13.4125C17.2339 12.807 16.4958 12.5028 15.6249 12.5C14.7541 12.4972 14.0166 12.8014 13.4124 13.4125C12.8083 14.0236 12.5041 14.7611 12.4999 15.625C12.4958 16.4889 12.7999 17.2271 13.4124 17.8396C14.0249 18.4521 14.7624 18.7556 15.6249 18.75ZM34.3749 41.6667C32.361 41.6667 30.6423 40.9549 29.2187 39.5313C27.7951 38.1076 27.0832 36.3889 27.0832 34.375C27.0832 32.3611 27.7951 30.6424 29.2187 29.2188C30.6423 27.7951 32.361 27.0833 34.3749 27.0833C36.3888 27.0833 38.1076 27.7951 39.5312 29.2188C40.9548 30.6424 41.6666 32.3611 41.6666 34.375C41.6666 36.3889 40.9548 38.1076 39.5312 39.5313C38.1076 40.9549 36.3888 41.6667 34.3749 41.6667ZM34.3749 37.5C35.243 37.5 35.9812 37.1965 36.5895 36.5896C37.1978 35.9826 37.5013 35.2445 37.4999 34.375C37.4985 33.5056 37.1951 32.7681 36.5895 32.1625C35.9839 31.557 35.2457 31.2528 34.3749 31.25C33.5041 31.2472 32.7666 31.5514 32.1624 32.1625C31.5582 32.7736 31.2541 33.5111 31.2499 34.375C31.2457 35.2389 31.5499 35.9771 32.1624 36.5896C32.7749 37.2021 33.5124 37.5056 34.3749 37.5ZM11.2499 41.6667L8.33325 38.75L38.7499 8.33334L41.6666 11.25L11.2499 41.6667Z" fill="white"/>
                     </svg>
                 </button>
 
-                <button class="util-button" id="delete-button">
+                <button class="btn util-button" id="delete-button">
                     <svg width="49" height="38" viewBox="0 0 49 38" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M17.0063 4.9375H39.0625C40.3057 4.9375 41.498 5.43136 42.3771 6.31044C43.2562 7.18952 43.75 8.3818 43.75 9.625V28.375C43.75 29.6182 43.2562 30.8105 42.3771 31.6896C41.498 32.5686 40.3057 33.0625 39.0625 33.0625H17.0063C16.3035 33.0623 15.6097 32.9041 14.9762 32.5996C14.3428 32.2951 13.786 31.852 13.3469 31.3031L5.61256 21.6375C5.01309 20.8891 4.68644 19.9589 4.68644 19C4.68644 18.0411 5.01309 17.1109 5.61256 16.3625L13.3469 6.69688C13.7853 6.14886 14.3411 5.70627 14.9734 5.40176C15.6057 5.09725 16.2983 4.9386 17.0001 4.9375M9.67818 3.76875C10.5572 2.66984 11.6724 1.78292 12.941 1.17378C14.2096 0.564645 15.599 0.248912 17.0063 0.250003H39.0625C41.549 0.250003 43.9335 1.23772 45.6917 2.99588C47.4498 4.75403 48.4375 7.1386 48.4375 9.625V28.375C48.4375 30.8614 47.4498 33.246 45.6917 35.0041C43.9335 36.7623 41.549 37.75 39.0625 37.75H17.0063C15.6001 37.7502 14.2119 37.434 12.9444 36.8249C11.677 36.2158 10.5628 35.3293 9.68443 34.2313L1.95318 24.5656C0.688859 22.9861 0 21.0232 0 19C0 16.9768 0.688859 15.0139 1.95318 13.4344L9.67818 3.76875ZM22.7501 11.0938C22.3058 10.6798 21.7181 10.4544 21.1109 10.4651C20.5037 10.4758 19.9244 10.7218 19.495 11.1512C19.0656 11.5806 18.8196 12.1599 18.8089 12.7671C18.7982 13.3743 19.0236 13.962 19.4376 14.4063L24.0313 19L19.4376 23.5938C19.2073 23.8083 19.0226 24.0671 18.8945 24.3546C18.7664 24.6421 18.6975 24.9524 18.692 25.2671C18.6864 25.5818 18.7443 25.8944 18.8622 26.1862C18.98 26.4781 19.1555 26.7432 19.3781 26.9657C19.6006 27.1883 19.8657 27.3638 20.1576 27.4816C20.4494 27.5995 20.762 27.6574 21.0767 27.6519C21.3914 27.6463 21.7017 27.5774 21.9892 27.4493C22.2767 27.3212 22.5355 27.1365 22.7501 26.9063L27.3438 22.3125L31.9375 26.9063C32.1521 27.1365 32.4109 27.3212 32.6984 27.4493C32.9859 27.5774 33.2962 27.6463 33.6109 27.6519C33.9256 27.6574 34.2382 27.5995 34.53 27.4816C34.8219 27.3638 35.087 27.1883 35.3095 26.9657C35.5321 26.7432 35.7076 26.4781 35.8254 26.1862C35.9433 25.8944 36.0012 25.5818 35.9956 25.2671C35.9901 24.9524 35.9212 24.6421 35.7931 24.3546C35.665 24.0671 35.4803 23.8083 35.25 23.5938L30.6563 19L35.25 14.4063C35.664 13.962 35.8894 13.3743 35.8787 12.7671C35.868 12.1599 35.622 11.5806 35.1926 11.1512C34.7632 10.7218 34.1839 10.4758 33.5767 10.4651C32.9695 10.4544 32.3818 10.6798 31.9375 11.0938L27.3438 15.6875L22.7501 11.0938Z" fill="white"/>
                     </svg>
 
                 </button>
 
-                <button class="util-button" id="divide-button">
+                <button class="btn util-button" id="divide-button">
                     <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M2 15.1856H32.3713V19.5244H2V15.1856ZM17.19 2.1725e-06C16.0393 -0.00114854 14.9352 0.454864 14.1207 1.26772C13.3062 2.08058 12.848 3.18371 12.8469 4.33441C12.8457 5.48512 13.3017 6.58916 14.1146 7.40364C14.9275 8.21813 16.0306 8.67635 17.1813 8.6775C18.332 8.67865 19.436 8.22264 20.2505 7.40978C21.065 6.59692 21.5232 5.4938 21.5244 4.34309C21.5255 3.19238 21.0695 2.08835 20.2567 1.27386C19.4438 0.459373 18.3407 0.00115288 17.19 2.1725e-06ZM17.19 26.0325C16.0393 26.0313 14.9352 26.4874 14.1207 27.3002C13.3062 28.1131 12.848 29.2162 12.8469 30.3669C12.8457 31.5176 13.3017 32.6217 14.1146 33.4361C14.9275 34.2506 16.0306 34.7088 17.1813 34.71C18.332 34.7112 19.436 34.2551 20.2505 33.4423C21.065 32.6294 21.5232 31.5263 21.5244 30.3756C21.5255 29.2249 21.0695 28.1208 20.2567 27.3064C19.4438 26.4919 18.3407 26.0336 17.19 26.0325Z" fill="white"/>
                     </svg>
                 </button>
             </div>
             <div class="row">
-                <button class="util-button2">
+                <button class="btn util-button2">
                     <svg width="45" height="45" viewBox="0 0 45 45" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M24.375 22.5H26.25C28.125 22.5 28.125 24.375 30.03 29.1131C31.875 33.75 31.875 35.625 33.75 35.625H35.625" stroke="#7D26F4" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
                         <path d="M22.5 35.625C25.3125 35.625 28.125 31.875 30 29.0625C31.875 26.25 34.6875 22.5 37.5 22.5M5.625 22.5H7.5L13.125 37.5L18.75 7.5H37.5" stroke="#7D26F4" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
                 </button>
 
-                <button class="number-button">
+                <button class="btn number-button">
                     ^
                 </button>
 
-                <button class="util-button2">
+                <button class="btn util-button2">
                     f(x)
                 </button>
 
-                <button class="operation-button">
+                <button class="btn operation-button">
                     *
                 </button>
             </div>
             <div class="row">
-                <button class="number-button" id="num-Seven">
+                <button class="btn number-button" id="num-Seven">
                     7
                 </button>
 
-                <button class="number-button" id="num-Eight">
+                <button class="btn number-button" id="num-Eight">
                     8
                 </button>
 
-                <button class="number-button">
+                <button class="btn number-button">
                     9
                 </button>
 
-                <button class="operation-button">
+                <button class="btn operation-button">
                     -
                 </button>
             </div>
             <div class="row">
-                <button class="number-button">
+                <button class="btn number-button">
                     4
                 </button>
 
-                <button class="number-button">
+                <button class="btn number-button">
                     5
                 </button>
 
-                <button class="number-button">
+                <button class="btn number-button">
                     6
                 </button>
 
-                <button class="operation-button">
+                <button class="btn operation-button">
                     +
                 </button>
             </div>
 
             <div class="row">
-                <button class="number-button">
+                <button class="btn number-button">
                     1
                 </button>
 
-                <button class="number-button">
+                <button class="btn number-button">
                     2
                 </button>
 
-                <button class="number-button">
+                <button class="btn number-button">
                     3
                 </button>
 
-                <button class="equals-button" id="equals-button">
+                <button class="btn equals-button" id="equals-button">
                     =
                 </button>
 
-                <button class="number-button">
+                <button class="btn number-button">
                     0
                 </button>
 
-                <button class="number-button">
+                <button class="btn number-button">
                     00
                 </button>
 
-                <button class="number-button">
+                <button class="btn number-button">
                     .
                 </button>
             </div>
@@ -163,3 +173,4 @@
 <script type="module" src="./scripts/Calculator.js"></script>
 </body>
 </html>
+

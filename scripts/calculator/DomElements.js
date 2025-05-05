@@ -6,9 +6,14 @@ let clearButton = document.querySelector('#clear-button');
 let percentButton = document.querySelector('#percent-button');
 let deleteButton = document.querySelector('#delete-button');
 let equalsButton = document.querySelector('#equals-button');
-let button = document.querySelectorAll('button');
+let button = document.querySelectorAll('.btn');
 let historyInput = document.querySelector('#history-text');
+let openModal = document.querySelector('#history');
+let dialog = document.querySelector('#history-dialog');
+
+
 
 export {numButton, operatorButton, inputText,
     divideButton, clearButton, percentButton,
-    deleteButton, equalsButton, button, historyInput};
+    deleteButton, equalsButton, button,
+    historyInput, openModal, dialog};

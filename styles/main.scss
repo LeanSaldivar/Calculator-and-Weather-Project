@@ -4,6 +4,7 @@
 @use './calculator/nav';
 @use './calculator/panel';
 @use './calculator/input';
+@use './calculator/history-modal';
 
 $text-color: #fff;
 
@@ -39,6 +40,7 @@ $button-color: #252525;
 * {
   margin: 0;
   padding: 0;
+  outline: 0;
   box-sizing: border-box;
 }
 
@@ -65,24 +67,21 @@ button {
   font-family: inherit;
   font-weight: inherit;
   font-size: 3.5rem;
-
-
-
   &:hover {
-    opacity: 0.8;
     cursor: pointer;
   }
 }
 
-//Container
+//Containers
 .container {
   .calculator {
     @include flex-column;
     margin: 1rem 0;
     gap: 2rem;
   }
-}
 
+
+}
 .navbar {
   @include flex-row;
 }
@@ -99,4 +98,3 @@ button {
   @include grid-column;
   gap: 1rem;
 }
-

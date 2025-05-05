@@ -43,6 +43,22 @@ $history-hover: #996EF4;
   gap: 3rem;
 }
 
+.nav-url {
+  background: transparent;
+
+  &:focus .moon {
+    @include moon-hover;
+  }
+
+  &:focus .sun {
+    @include light-hover;
+  }
+
+  &:focus .history {
+    @include history-hover;
+  }
+}
+
 .icon {
   margin: 0.5rem 0.8rem;
 }
@@ -52,30 +68,22 @@ $history-hover: #996EF4;
 }
 
 
+
 .moon {
   &:hover {
     @include moon-hover;
   }
 
-  &:active {
-    @include moon-hover;
-  }
 }
 
 .sun {
   &:hover {
     @include light-hover;
   }
-  &:active {
-    @include light-hover;
-  }
 }
 
 .history {
   &:hover {
-    @include history-hover;
-  }
-  &:active {
     @include history-hover;
   }
 }
