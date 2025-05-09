@@ -12,7 +12,6 @@ $equals-btn: #7E30ED;
 }
 
 @mixin number-btn {
-  background: $number-bg;
   color: $number-color;
 
   @include btn-size;
@@ -38,6 +37,14 @@ $equals-btn: #7E30ED;
   border-radius: 10px;
 }
 
+.btn-dark {
+  background: $number-bg;
+}
+
+.btn-light {
+  background: #FFF;
+}
+
 .operation-button {
   @include operation-btn;
 }
@@ -53,6 +60,10 @@ $equals-btn: #7E30ED;
 
 .util-button2{
   @include number-btn;
+}
+
+#clear-button {
+  background: #FF5500;
 }
 
 .equals-button {

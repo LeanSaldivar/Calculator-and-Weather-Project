@@ -5,7 +5,7 @@
 @use './calculator/panel';
 @use './calculator/input';
 @use './calculator/history-modal';
-
+$bg-light: linear-gradient(to bottom, #B69DFB, #F2EFFE);
 $text-color: #fff;
 
 $history-txt: #7D7D7D;

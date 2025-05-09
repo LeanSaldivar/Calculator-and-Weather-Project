@@ -1,3 +1,4 @@
+$light-nav: #FFF;
 $nav-bg: #252525;
 $moon-hover: #C3C3C3;
 $light-hover: #F6F638;
@@ -5,36 +6,47 @@ $history-hover: #996EF4;
 
 @mixin base {
   transition: all 0.3s ease-in-out;
-  width: 36px;
-  height: 36px;
+  width: 2.5rem;
+  height: 2.6rem;
   border-radius: 10px;
   background: transparent;
 }
 
 @mixin moon-hover {
   background: $moon-hover;
+  stroke: black;
+  stroke-width: 2.25px;
   border-radius: 10px;
-  width: 3rem;
+  width: 4.5rem;
+  height: 2.6rem;
   transition: all 0.3s ease-in-out;
 }
 
 @mixin light-hover {
   background: $light-hover;
   border-radius: 10px;
-  width: 3rem;
+  width: 4.5rem;
+  height: 2.6rem;
   transition: all 0.3s ease-in-out;
 }
 
 @mixin history-hover {
   background: $history-hover;
   border-radius: 10px;
-  width: 3rem;
+  width: 4.5rem;
+  height: 2.6rem;
   transition: all 0.3s ease-in-out;
 }
 
-.navbar {
+.dark-nav {
   background: $nav-bg;
+}
 
+.light-nav {
+  background-color: $light-nav;
+}
+
+.navbar {
   box-shadow: 0 10px 23px -1px rgba(0, 0, 0, 0.3);
   border-radius: 20px;
 }
@@ -45,35 +57,28 @@ $history-hover: #996EF4;
 
 .nav-url {
   background: transparent;
-
-  &:focus .moon {
-    @include moon-hover;
-  }
-
-  &:focus .sun {
-    @include light-hover;
-  }
-
-  &:focus .history {
-    @include history-hover;
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem 0;
 }
 
 .icon {
-  margin: 0.5rem 0.8rem;
+  margin: 0 0.8rem;
 }
 
 .moon, .sun, .history {
   @include base;
 }
 
-
-
 .moon {
   &:hover {
     @include moon-hover;
   }
+}
 
+.active-moon {
+  @include moon-hover;
 }
 
 .sun {
@@ -82,9 +87,19 @@ $history-hover: #996EF4;
   }
 }
 
+.active-sun {
+  @include light-hover;
+}
+
+
+
 .history {
   &:hover {
     @include history-hover;
   }
+}
+
+.active-history {
+  @include history-hover;
 }
 
