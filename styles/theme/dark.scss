@@ -1,8 +1,27 @@
-
+//Dark
 $bg-dark: #1F1F1F;
-$nav-dark-hover: #C3C3C3;
+$text-color: #fff;
+$num-button-color-dark: #252525;
+$operation-button-color-dark: #996EF4;
+$equals-button-color-dark: #7E30ED;
+$button-text-dark: #7D26F4;
+
+//light
+$bg-light-theme: linear-gradient(to bottom, #B69DFB, #F2EFFE);
+$text-color: #fff;
+
+.dark-mode {
+  background-color: $bg-dark ;
+}
+
+.light-mode {
+  background-image: $bg-light-theme;
+  background-repeat: no-repeat;
+  }
+
+@if(lightness($bg-dark) > 50) {}
 
 body {
-  background: $bg-dark;
+  color: $text-color;
 }
 

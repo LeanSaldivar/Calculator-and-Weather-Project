@@ -91,5 +91,12 @@ const getLocalHistory = () => {
     });
 }
 
+function deleteLog(event) {
+    event.target.parentElement.remove();
+    persistCalculations();
+    getLocalHistory();
+    console.log("Log deleted");
+}
 
-export {saveInput, saveOutput, persistCalculations, getHistoryInput, getLocalHistory};
+
+export {saveInput, saveOutput, persistCalculations, getHistoryInput, getLocalHistory, deleteLog};

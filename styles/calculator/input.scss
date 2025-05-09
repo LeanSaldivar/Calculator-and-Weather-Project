@@ -3,9 +3,9 @@ $history-txt: #7D7D7D;
 $input-bg: #252525;
 
 @mixin font{
-  background: $input-bg;
+  background: inherit;
 
-  color: $input-color;
+  color: inherit;
   font-family: inherit;
   font-weight: inherit;
   font-size: 2rem;
@@ -28,8 +28,18 @@ input {
   }
 }
 
-.input-container {
+.input-dark {
   background: $input-bg;
+  color: $input-color;
+
+}
+
+.input-light {
+  background: $input-color;
+  color: #000;
+}
+
+.input-container {
   justify-content: space-evenly;
 
   text-align: end;

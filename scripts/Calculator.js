@@ -3,13 +3,59 @@ import {
     numButton, operatorButton, divideButton,
     clearButton, percentButton, deleteButton,
     equalsButton, inputText, button, historyInput,
-    openModal, dialog,
+    openModal, dialog, trash, moon, darkMode, sun, history, icon
 } from './calculator/DomElements.js';
-import { saveInput, saveOutput, persistCalculations, getHistoryInput, getLocalHistory} from './calculator/localStorage.js';
+import { saveInput, saveOutput, persistCalculations, getHistoryInput, getLocalHistory, deleteLog} from './calculator/localStorage.js';
+import { enableDarkMode, disableDarkMode, toggleHistoryIcon, checkTheme } from './Theme/DarkMode.js';
+
+// Add click event listeners for theme toggle
+moon.addEventListener("click", () => {
+    enableDarkMode();
+});
+
+sun.addEventListener("click", () => {
+    disableDarkMode();
+});
+
+// Add click event for history toggle
+history.addEventListener("click", () => {
+    // Toggle the dialog
+    dialog.showModal();
+
+    // Toggle the active state for history icon
+    toggleHistoryIcon(true);
+});
+
+// When dialog closes, remove active state from history icon
+dialog.addEventListener('close', () => {
+    toggleHistoryIcon(false);
+});
+
+// Check the theme on initial load
+checkTheme();
+
+
+
+// Add click event listeners
+
+
+
+moon.addEventListener("click", () => {
+    enableDarkMode();
+});
+
+sun.addEventListener("click", () => {
+    disableDarkMode();
+})
+
+if (darkMode === "active") {
+    enableDarkMode();
+} else {
+    disableDarkMode();
+}
 
 
 getLocalHistory();
-
 
 openModal.addEventListener('click', () => dialog.showModal());
 
@@ -24,26 +70,35 @@ dialog.addEventListener('click', (event) => {
     if (!isInDialog) {
         dialog.close();
     }
-})
-
+});
 
 percentButton.addEventListener('click', () => getInput('%', inputText));
 divideButton.addEventListener('click', () => getInput('/', inputText));
 clearButton.addEventListener('click', () => clear(inputText));
 deleteButton.addEventListener('click', () => del(inputText));
 
-equalsButton.addEventListener('click', () => {
+inputText.addEventListener('onkeydown ', (e) => {
+    alert(`Key Down: ${e.key}`);
+
+    if (e.keyCode === 13) {
+        calculateResult(inputText);
+        saveOutput(inputText.value);
+        persistCalculations();
+        getLocalHistory();
+    }
+})
+
+equalsButton.addEventListener('click', (e) => {
     calculateResult(inputText);
     saveOutput(inputText.value);
     persistCalculations();
     getLocalHistory();
-
 });
 
 inputText.addEventListener('input', () => {
+    saveInput(inputText.value);
     getHistoryInput(historyInput, inputText);
-})
-
+});
 
 numButton.forEach(button => {
     button.addEventListener('click', () => {
