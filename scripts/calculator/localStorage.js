@@ -64,20 +64,26 @@ const getLocalHistory = () => {
     const historyContainer = document.querySelector(".history-log");
     const history = localStorage.getItem("calculations");
 
+    historyContainer.innerHTML = '';
+
+    if (!history) return;
+
     const parsedHistory = JSON.parse(history);
 
-    parsedHistory.forEach((entry) => {
+    parsedHistory.forEach((entry, index) => {
         const logContainer = document.createElement("div");
         logContainer.classList.add("log");
+        logContainer.dataset.index = index; // Store the index as data attribute
 
         const log = document.createElement("p");
         log.innerText = `${entry.input} = ${entry.output}`;
 
         const deleteLogContainer = document.createElement("div");
         deleteLogContainer.classList.add("delete-log");
+        deleteLogContainer.dataset.index = index; // Also add index to delete button container
         deleteLogContainer.innerHTML =`
-            <svg class="trash" id="trash" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                 viewBox="0 0 24 24">
+            <svg class="trash" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                 viewBox="0 0 24 24" data-index="${index}">
                 <path fill="currentColor"
                       d="M9 3v1H4v2h1v13a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V6h1V4h-5V3zM7 6h10v13H7zm2 2v9h2V8zm4 0v9h2V8z"/>
             </svg>
@@ -91,12 +97,23 @@ const getLocalHistory = () => {
     });
 }
 
-function deleteLog(event) {
-    event.target.parentElement.remove();
-    persistCalculations();
-    getLocalHistory();
-    console.log("Log deleted");
+
+function deleteLog(index) {
+    try {
+        const storedCalculations = JSON.parse(localStorage.getItem("calculations")) || [];
+
+        if (index !== undefined && index >= 0 && index < storedCalculations.length) {
+            storedCalculations.splice(index, 1);
+            localStorage.setItem("calculations", JSON.stringify(storedCalculations));
+            console.log(`Deleted calculation at index ${index}`);
+        } else {
+            console.error(`Invalid index: ${index}`);
+        }
+    } catch (e) {
+        console.error("Failed to delete calculation:", e);
+    }
 }
+
 
 
 export {saveInput, saveOutput, persistCalculations, getHistoryInput, getLocalHistory, deleteLog};

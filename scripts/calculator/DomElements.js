@@ -10,12 +10,12 @@ let button = document.querySelectorAll('.btn');
 let historyInput = document.querySelector('#history-text');
 let openModal = document.querySelector('#history');
 let dialog = document.querySelector('#history-dialog');
-let trash = document.querySelectorAll('.trash');
 const moon = document.querySelector("#moon");
 let darkMode = localStorage.getItem("darkmode");
 const sun = document.querySelector("#sun");
 const history = document.querySelector("#history");
 const icon = document.querySelectorAll(".icon");
+let trash = document.querySelectorAll('.trash');
 
 export {numButton, operatorButton, inputText,
     divideButton, clearButton, percentButton,

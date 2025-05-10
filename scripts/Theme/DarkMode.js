@@ -7,17 +7,11 @@ const sunIcon = document.querySelector(".sun");
 const historyIcon = document.querySelector(".history");
 const allIcons = document.querySelectorAll(".icon");
 
-
-
-
-// Function to toggle active icons
 function updateActiveIcons(isDarkMode) {
-    // First remove all active classes from all icons
     allIcons.forEach(icon => {
         icon.classList.remove('active-moon', 'active-sun', 'active-history', 'active-icon');
     });
 
-    // Set active class based on the current theme
     if (isDarkMode) {
         moonIcon.classList.add('active-moon');
     } else {
@@ -54,7 +48,6 @@ const addDarkMode = () => {
     numButton.forEach((btn) => {
         btn.classList.add("btn-dark");
     })
-
 
     moonIcon.innerHTML =
         `
