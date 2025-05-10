@@ -5,6 +5,7 @@
 @use './calculator/panel';
 @use './calculator/input';
 @use './calculator/history-modal';
+
 $bg-light: linear-gradient(to bottom, #B69DFB, #F2EFFE);
 $text-color: #fff;
 
@@ -79,6 +80,8 @@ button {
     margin: 1rem 0;
     gap: 2rem;
   }
+
+ 
 
 
 }
